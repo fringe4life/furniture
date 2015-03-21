@@ -1,0 +1,71 @@
+@import "reset";
+@import "header";
+@import "tabs";
+@import "footer";
+@import "contact";
+@import "about";
+
+.container {
+   width: 750px;
+}
+
+.center {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.width-90 {
+   width:75%;
+}
+
+
+.width-75 {
+   width:75%;
+}
+
+.width-50 {
+   width:50%;
+}
+
+.left {
+   float: left;
+}
+
+.right {
+   float: right;
+}
+
+.break {
+   clear: both;
+}
+
+body {
+   background-color: #F5F5F5;
+}
+
+#tabs, footer {
+   font-family: 'Open Sans', sans-serif;
+   //max-width: 750px;
+}
+
+
+.bold {
+   font-weight: 700;
+}
+
+.s-bold {
+   font-weight: 600;
+}
+
+.padding-top-10 {
+   padding-top: 10px;
+}
+
+.padding-top {
+   padding-top: 5px;
+}
+
+.padding-bottom {
+   padding-bottom: 10px;
+}
+

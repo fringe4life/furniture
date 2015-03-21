@@ -1,0 +1,1 @@
+  <div id="tabs-3"><?php ?></div>
