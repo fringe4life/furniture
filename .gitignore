@@ -44,3 +44,7 @@ Temporary Items
 
 #sass cache
 /sass/.sass-cache
+sass/.sass-cache
+
+#ignore cfg
+*.cfg

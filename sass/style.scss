@@ -45,9 +45,7 @@ body {
 
 #tabs, footer {
    font-family: 'Open Sans', sans-serif;
-   //max-width: 750px;
 }
-
 
 .bold {
    font-weight: 700;
@@ -69,3 +67,7 @@ body {
    padding-bottom: 10px;
 }
 
+.border {
+    border: thin solid grey;
+      border-radius: 2px;
+}

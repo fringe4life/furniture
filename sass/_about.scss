@@ -16,5 +16,9 @@
       img {
         padding-bottom: 10px;
     }
-   
+  // @extend %background-color;
+  padding-bottom: 7px;
+  #headerAbout {
+    text-align: center;
+  }
 }
