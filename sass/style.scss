@@ -1,12 +1,44 @@
+// best practise
+// put variables here for use in the imported files.
+
+$background : #F5F5F5;
+$tab-background :#E7E7E7;
+
 @import "reset";
 @import "header";
 @import "tabs";
 @import "footer";
 @import "contact";
 @import "about";
+@import "figure";
 
 .container {
-   width: 750px;
+   max-width: 960px;
+   width:75%;
+     @media (max-width:600px){
+         width: 550px;
+          width:90%;
+     }
+     @media (max-width:400px){
+      width: 350px;
+          width:95%;
+     }
+     @media (max-width:350px){
+      width: 320px;
+          width:95%;
+     }
+     @media (max-width:320px){
+      width: 310px;
+          width:95%;
+     }
+     @media (max-width:310px){
+      width: 300px;
+          width:95%;
+     }
+     @media (max-width:300px) and (min-width:250px){
+      width: 250px;
+      width:95%;
+     }
 }
 
 .center {
@@ -15,7 +47,7 @@
 }
 
 .width-90 {
-   width:75%;
+   width:90%;
 }
 
 
@@ -40,11 +72,12 @@
 }
 
 body {
-   background-color: #F5F5F5;
+   background-color: $background;
 }
 
 #tabs, footer {
-   font-family: 'Open Sans', sans-serif;
+   font-family: cursive, 'Open Sans', sans-serif;
+   
 }
 
 .bold {
@@ -70,4 +103,9 @@ body {
 .border {
     border: thin solid grey;
       border-radius: 2px;
+}
+
+.border-orange-medium {
+   border: medium solid orange;
+   border-radius: 4px;
 }

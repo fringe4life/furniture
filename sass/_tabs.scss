@@ -2,10 +2,8 @@
         
      padding-top: 10px;
      padding-bottom: 20px;
+     width:100%;
      
-     
-       
-  
 }
 
 #text {
@@ -13,7 +11,6 @@
      @media (max-width:550px){
                clear: both;
                width:100%;
-               
           }
           #first {
           
@@ -38,7 +35,6 @@
 
 #woodworking{
      img {
-         // background-color: #F5F5F5;
      @extend %Image;
      @media (max-width: 550px){
           width: 85%;
@@ -63,10 +59,11 @@
           margin-right:45px;
      }
      
+     
      @extend %background-color;
      #image {
           img {
-               width: 95%;
+                 width: 95%;
           }
           @media (max-width:550px){
               width: 90%;
@@ -78,32 +75,17 @@
      #hidden {
           width:0;
           height: 0;
-          
+         
           @media (max-width:1000px){
                width: 95%;
                height: 50%;
-          }
-          @media (max-width:700px){
-               
-          }
-          @media (max-width:600px){
-                 
-          }
-          @media (max-width:550px){
-              // clear: both;
-              // width:75%;
-               
-          }
-          @media (max-width:400px){
-               
-          }
-          @media (max-width:300px){
-               
           }
      }
       #hidden-1 {
           width:0;
           height: 0;
+  img { border-color: #E7E7E7;
+          border-radius:0px;}
           @media (max-width:700px){
                width: 95%;
                height: 50%;
@@ -137,13 +119,10 @@
    p + p {
       padding-bottom: 10px;
    }
-   p:nth-of-type(odd) {
-     
-   }
 }
 
 %background-color {
-     background-color: #E7E7E7;
+     background-color: $tab-background;
 }
 
 #tabs-3 {
@@ -152,9 +131,17 @@
 
 
 #tabs-2 {
+     width: 350px;
+       margin-left: auto;
+   margin-right: auto;
      padding-top: 7px;
      padding-bottom: 7px;
      @extend %background-color;
      margin-top: 15px;
      text-align: center;
+     
+     @media (max-width:400px){
+          font-size: 15px;
+          width: 90%;
+     }
 }

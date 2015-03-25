@@ -1,0 +1,49 @@
+#tabs-3 {
+    #gallery1 {
+        @extend %gallery;
+    }
+    
+    #gallery2 {
+        @extend %gallery;
+    }
+}
+
+%gallery {
+    ul {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        li {
+            padding: 6px;
+            margin:6px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    figure {
+        
+        img {
+            
+            width:95%;
+            //height:250px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        figcaption {
+             text-align: center;
+                #title {
+                   
+                    font-weight:500;
+                }
+                #price {
+                    text-align: center;
+                }
+                #description {
+                    
+                }
+        }
+    }
+    }
+    
+}
+

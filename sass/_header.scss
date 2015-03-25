@@ -1,46 +1,46 @@
 header {
-   
+   width:100%;
    h1 {
       font-family: 'Oswald', sans-serif;
-      text-align: center;
       font-size: 27px;
       padding-top: 5px;
       padding-bottom: 5px;
-      a {
-        text-decoration: none;
-        color:black;
-        &:hover {
-            color:brown;
-        }
-      }
-      &:before {
-          @media (max-width: 300px){
-            content: "C.W.";
-            font-size: 18px;
+      @media (max-width: 850px){
+            text-align: center;
           }
-      }
       @media (max-width: 900px){
             font-size: 26px;
           }
-        @media (max-width: 800px){
-            font-size: 24px;
-          }@media (max-width: 700px){
-            font-size: 22px;
-          }
-      @media (max-width: 300px){
+      @media (max-width: 330px){
          #name {
             display: none;
             width: 90%;
          }
-          font-size: 18px;
+          font-size: 22px;
       }
+      &:before {
+          @media (max-width: 330px){
+            content: "C.W.";
+            font-size: 22px;
+          }
+      }
+      
    }
    li {
+    
+    &:first-child {
+        padding-left: 12px;
+    }
      padding-top: 10px;
      margin-bottom: 10px;
          float: left;
          text-align: center;
-         
+         @media (max-width:350px){
+            display: block;
+            float:none;
+            width:100%;
+           padding-bottom: 0;
+         }
          
      }
      li + li {
@@ -60,21 +60,64 @@ header {
           border: thin solid grey;
       border-radius: 2px;
       background-color: orange;
-      padding: 2px 3px 2px 2px;
+      padding: 5px;
       //border-radius: 2px;
-      
+       @media (max-width:350px) and  (min-width:200px){
+            display: block;
+            float:none;
+            width:200px;
+           // padding-bottom: 0;
+            
+         }
      }
      a:hover, a:active {
-          color: brown;
+          color: red;
      }
-     #flex {
-        display: flex;
-     flex-direction: collumn;
+    
+     #header {
+        float: left;
+        @extend %removeFloat;
+        order:1;
+        flex-grow:2;
+        align-self: center;
+     }
+     #nav {
+        float: right;
+        @extend %removeFloat;
+        order:2;
+         align-self: center;
+         ul {
+            
+         flex-direction: column;
      flex-wrap: wrap;
-     justify-content: flex-start;
+    justify-content: space-between;
      align-items: center;
      align-content: center;
+     @media (max-width:350px){
+        width:100%;
+        padding: 0;
+        
+     }
+         }
+        
+     }
+   
+}
+%removeFloat {
+    @media (max-width:850px){
+        float: none;
      }
 }
 
-
+ #flex {
+        height:100%;
+        display: flex;
+     
+     justify-content: space-around;
+     align-items: center;
+     align-content: center;
+      @media (max-width:850px){
+        flex-direction: column;
+     flex-wrap: wrap;
+      }
+     }

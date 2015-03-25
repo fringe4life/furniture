@@ -1,24 +1,21 @@
 #aboutMe {
-   
-       
     p + p {
         padding-bottom: 10px;
     }
      h2 {
-        //position: relative;
          text-align: center;
-         
     }
-  
 }
 
 #tabs-4 {
       img {
         padding-bottom: 10px;
+        @media (max-width:300px){
+            width:90%;
+        }
     }
-  // @extend %background-color;
-  padding-bottom: 7px;
-  #headerAbout {
-    text-align: center;
-  }
+    padding-bottom: 7px;
+    #headerAbout {
+        text-align: center;
+    }
 }
