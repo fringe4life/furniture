@@ -29,8 +29,7 @@
 
 %Image {
      display: block;
-     margin-left: auto;
-     margin-right: auto;
+     @extend .center;
 }
 
 #woodworking{
@@ -49,8 +48,14 @@
 }
 
 #seriousFun {
+// hello
      padding-left: 15px;
      padding-top: 0px;
+}
+
+%startInvisible {
+	width:0;
+	height:0;
 }
 
 #tabs-1 {
@@ -62,19 +67,21 @@
      
      @extend %background-color;
      #image {
+	 @extend .width-50;
+	 @extend .right;
+	 @extend .padding-top-10;
           img {
                  width: 95%;
           }
           @media (max-width:550px){
-              width: 90%;
+              width:90%;
           }
      }
      #comissionText {
            font-weight: bold;
      }
      #hidden {
-          width:0;
-          height: 0;
+          @extend %startInvisible;
          
           @media (max-width:1000px){
                width: 95%;
@@ -82,10 +89,11 @@
           }
      }
       #hidden-1 {
-          width:0;
-          height: 0;
-  img { border-color: #E7E7E7;
-          border-radius:0px;}
+			@extend %startInvisible;
+			img { 
+			//border-color: $tab-background;
+			//	border-radius:0px;
+				}
           @media (max-width:700px){
                width: 95%;
                height: 50%;
@@ -123,6 +131,7 @@
 
 %background-color {
      background-color: $tab-background;
+     // should work
 }
 
 #tabs-3 {
@@ -132,8 +141,7 @@
 
 #tabs-2 {
      width: 350px;
-       margin-left: auto;
-   margin-right: auto;
+     @extend .center;
      padding-top: 7px;
      padding-bottom: 7px;
      @extend %background-color;

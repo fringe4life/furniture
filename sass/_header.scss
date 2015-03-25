@@ -1,7 +1,7 @@
 header {
    width:100%;
    h1 {
-      font-family: 'Oswald', sans-serif;
+      font-family: $font-family-header;
       font-size: 27px;
       padding-top: 5px;
       padding-bottom: 5px;
@@ -32,7 +32,7 @@ header {
         padding-left: 12px;
     }
      padding-top: 10px;
-     margin-bottom: 10px;
+     @extend .padding-bottom-10;
          float: left;
          text-align: center;
          @media (max-width:350px){
@@ -57,8 +57,7 @@ header {
           padding-bottom: 5px;
           padding-top: 5px;
           text-decoration: none;
-          border: thin solid grey;
-      border-radius: 2px;
+		  @include border(grey, 2px, thin, solid);
       background-color: orange;
       padding: 5px;
       //border-radius: 2px;
@@ -88,11 +87,9 @@ header {
          align-self: center;
          ul {
             
-         flex-direction: column;
-     flex-wrap: wrap;
-    justify-content: space-between;
-     align-items: center;
-     align-content: center;
+        @extend %flex-box;
+		  flex-direction: column;
+		  flex-wrap: wrap;
      @media (max-width:350px){
         width:100%;
         padding: 0;
@@ -112,10 +109,7 @@ header {
  #flex {
         height:100%;
         display: flex;
-     
-     justify-content: space-around;
-     align-items: center;
-     align-content: center;
+     @extend %flex-box;
       @media (max-width:850px){
         flex-direction: column;
      flex-wrap: wrap;
