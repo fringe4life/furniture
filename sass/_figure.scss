@@ -27,13 +27,20 @@
             @extend .center;
         }
         figcaption {
+		@include border(grey, 2px, thin, solid);
+		padding: 3px;
+		background-color: $tab-background;
              text-align: center;
                 #title {
-                   
+                   font-size: 17px;
                     font-weight:500;
                 }
                 #price {
-                    text-align: center;
+				 font-size: 12px;
+                    background-color: green;
+					@include border(green, 2px, thin, solid);
+					padding: 5px;
+					color: white;
                 }
                 #description {
                     

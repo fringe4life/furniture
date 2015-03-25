@@ -11,13 +11,16 @@ $font-family-header: 'Oswald', sans-serif;
     border-radius: $border-radius;
 }
 
-%flex-box {
+%reset {
+	padding: 0;
+	margin:0;
+}
 
-     
-    justify-content: space-between;
-     align-items: center;
-     align-content: center;
-	 }
+%flex-box {
+	justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
 
 .border {
     border: thin solid grey;
@@ -87,12 +90,7 @@ p + p {
     @extend .padding-top-10;
 }
 
-//.border-orange-medium {
-//   border: medium solid orange;
-//   border-radius: 4px;
-//}
-
-
+// having set up variables, mixins and classes, import the partial files
 @import "header";
 @import "tabs";
 @import "footer";
@@ -100,6 +98,7 @@ p + p {
 @import "about";
 @import "figure";
 
+// main container
 .container {
    max-width: 960px;
    width:75%;

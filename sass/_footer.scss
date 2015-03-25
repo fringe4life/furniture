@@ -1,6 +1,5 @@
 footer {
-   padding: 0;
-   margin: 0;
+   @extend %reset;
    padding-top: 14px;
   padding: 12px;
   margin-top: 7px;
@@ -21,8 +20,7 @@ footer {
    //}
    
    span {
-      padding: 0;
-      margin: 0;
+      @extend %reset;
       //margin-left: 7px !important;
       background-color: grey;
       color: white;
@@ -31,8 +29,7 @@ footer {
    }
    
    #email {
-       padding: 0;
-      margin: 0;
+       @extend %reset;
 	  @include border(grey, 2px, thin, solid);
       padding: 2px;
       

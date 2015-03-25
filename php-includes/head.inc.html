@@ -30,7 +30,18 @@
                    
                  }
                });
-             });
+               $( "#slider-range" ).slider({
+                range: true,
+                min: 500,
+                max: 1400,
+                values: [ 550, 900 ],
+                slide: function( event, ui ) {
+                  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                }
+            });
+            $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+                " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+            });
         </script>
         <title>Furniter Designed and Built by Chris Wilson</title>        
     </head>

@@ -137,7 +137,7 @@ class Furniture {
         $id = $row["id"];
         $image = "<li class='border'><figure class='center'>
         <img src='". $folder . "/" . $filename ."' alt='picture' class='center'>
-        <figcaption><h2>" . $title ."</h2> <p>" . $price  . "</p><p>" . $description ." </p>" .
+        <figcaption><p><span id='title'>" . $title ."</span> <span id='price'>" . $price  . "<span></p><p><span id='description'>" . $description ." </span></p>" .
         "</figcaption>
         
         </figure></li>";
