@@ -90,6 +90,13 @@ p + p {
     @extend .padding-top-10;
 }
 
+p:first-child {
+     padding-bottom: 10px;
+}
+p + p {
+     padding-bottom: 10px;
+}
+
 // having set up variables, mixins and classes, import the partial files
 @import "header";
 @import "tabs";

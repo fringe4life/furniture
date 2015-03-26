@@ -109,7 +109,7 @@
           padding-right: 45px;
       }
      #welcome {
-          font-family: 'Oswald', sans-serif;
+          font-family: $font-family-header;
           font-size: 22px;
           text-decoration: underline;
           
@@ -121,12 +121,7 @@
      padding-top: 10px;
      padding-bottom: 10px;
    }
-   p:first-child {
-     padding-bottom: 10px;
-   }
-   p + p {
-      padding-bottom: 10px;
-   }
+   
 }
 
 %background-color {
@@ -137,7 +132,8 @@
 #tabs-3 {
      @extend %background-color;
 	  #amount {
-border:0; color:#f6931f; font-weight:bold;}
+			border:0; color:#f6931f; font-weight:bold;
+	}
 }
 
 

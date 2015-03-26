@@ -142,6 +142,16 @@ body {
   padding-bottom: 10px;
 }
 
+/* line 93, ../sass/style.scss */
+p:first-child {
+  padding-bottom: 10px;
+}
+
+/* line 96, ../sass/style.scss */
+p + p {
+  padding-bottom: 10px;
+}
+
 /* line 1, ../sass/_header.scss */
 header {
   width: 100%;
@@ -402,7 +412,7 @@ header #nav ul {
 }
 /* line 111, ../sass/_tabs.scss */
 #tabs-1 #welcome {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 22px;
   text-decoration: underline;
 }
@@ -411,28 +421,20 @@ header #nav ul {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-/* line 124, ../sass/_tabs.scss */
-#tabs-1 p:first-child {
-  padding-bottom: 10px;
-}
-/* line 127, ../sass/_tabs.scss */
-#tabs-1 p + p {
-  padding-bottom: 10px;
-}
 
-/* line 132, ../sass/_tabs.scss */
+/* line 127, ../sass/_tabs.scss */
 #tabs-4, #tabs-1, #tabs-3, #tabs-2 {
   background-color: #e7e7e7;
 }
 
-/* line 139, ../sass/_tabs.scss */
+/* line 134, ../sass/_tabs.scss */
 #tabs-3 #amount {
   border: 0;
   color: #f6931f;
   font-weight: bold;
 }
 
-/* line 144, ../sass/_tabs.scss */
+/* line 140, ../sass/_tabs.scss */
 #tabs-2 {
   width: 350px;
   padding-top: 7px;
@@ -441,7 +443,7 @@ header #nav ul {
   text-align: center;
 }
 @media (max-width: 400px) {
-  /* line 144, ../sass/_tabs.scss */
+  /* line 140, ../sass/_tabs.scss */
   #tabs-2 {
     font-size: 15px;
     width: 90%;
@@ -638,48 +640,48 @@ footer a[href^="mailto"], #contactEmail #repEmail a[href^="mailto"] {
   color: white;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 .container {
   max-width: 960px;
   width: 75%;
 }
 @media (max-width: 600px) {
-  /* line 102, ../sass/style.scss */
+  /* line 109, ../sass/style.scss */
   .container {
     width: 550px;
     width: 90%;
   }
 }
 @media (max-width: 400px) {
-  /* line 102, ../sass/style.scss */
+  /* line 109, ../sass/style.scss */
   .container {
     width: 350px;
     width: 95%;
   }
 }
 @media (max-width: 350px) {
-  /* line 102, ../sass/style.scss */
+  /* line 109, ../sass/style.scss */
   .container {
     width: 320px;
     width: 95%;
   }
 }
 @media (max-width: 320px) {
-  /* line 102, ../sass/style.scss */
+  /* line 109, ../sass/style.scss */
   .container {
     width: 310px;
     width: 95%;
   }
 }
 @media (max-width: 310px) {
-  /* line 102, ../sass/style.scss */
+  /* line 109, ../sass/style.scss */
   .container {
     width: 300px;
     width: 95%;
   }
 }
 @media (max-width: 300px) and (min-width: 250px) {
-  /* line 102, ../sass/style.scss */
+  /* line 109, ../sass/style.scss */
   .container {
     width: 250px;
     width: 95%;
