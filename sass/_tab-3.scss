@@ -1,0 +1,114 @@
+#tabs-3 {
+	
+    #gallery1 {
+        @extend %gallery;
+		order: 1;
+		align-self: center;
+    }
+    
+    #gallery2 {
+        @extend %gallery;
+		order: 2;
+		align-self: center;
+    }
+	
+	
+	form {
+		@extend %form;
+		@media (max-width:800px){
+			width:90%;
+		}
+	}
+	input {
+		border-radius: 4px;
+		@extend %input;
+		&[type=text]{
+			margin-bottom: 7px;
+		}
+		@media (max-width:800px){
+			width:90%;
+		}
+		
+	}
+	label {
+		@extend %label;
+	}
+	input[type=submit]{
+		@extend %submit;
+		width: 90%;
+		@extend .center;
+	}
+}
+
+#workFlex {
+	display: flex;
+	@extend %flex-box;
+	@media (max-width: 800px){
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	
+}
+
+#itemSearch {
+@include border(orange);
+	@extend %background-color;
+	width:50%;
+	@extend .center;
+	@media (max-width:800px){
+		width:90%;
+	}
+}
+
+#slider {
+	//height:40px;
+	//margin: 15px;
+	width:inherit;
+}
+
+%gallery {
+width:50%;
+@media (max-width:800px){
+		width:95%;
+	}
+    ul {
+        width: 100%;
+        @extend .center;
+        li {
+            padding: 6px;
+            margin:6px;
+			width: 95%;
+			@extend .center;
+		}
+		figure {
+			
+			img {
+				
+				width:95%;
+				//height:250px;
+				@extend .center;
+			}
+			figcaption {
+				@include border(grey, 2px, thin, solid);
+				padding: 3px;
+				background-color: $tab-background;
+				text-align: center;
+				.title {
+				   font-size: 17px;
+					font-weight:500;
+				}
+				.price {
+				 font-size: 12px;
+					background-color: green;
+					@include border(green, 2px, thin, solid);
+					padding: 5px;
+					color: white;
+				}
+				.description {
+					
+				}
+			}
+		}
+    }
+    
+}

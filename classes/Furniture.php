@@ -19,17 +19,20 @@ class Furniture {
     function __construct(){
         
     }
-    
-    private function check_presence($params){//checks for presence of vital values and sets to defaults if not present
+    /**
+        checks for presence of vital values and sets to defaults if not present
+        Takes a list of known safe get variables, sanitize first with the get_allowed_params
+    */
+    private function check_presence($params){//
         if(has_presence($params["x"])){
                     
         }else {
-            $params["x"]= $x_default;
+            $params["x"]= $this::$x_default;
         }
         if(has_presence($params["number"])){
             
         } else {
-            $params["number"] = $number_default;
+            $params["number"] = $this::$number_default;
         }
     }
     
@@ -39,6 +42,12 @@ class Furniture {
         exit;
     }
     
+    /**
+    First checks if variables are present by calling check_presence
+    Second Checks if all allowed params are numbers
+    
+    Returns a boolean if the received values are numbers or not
+    */
     private function performChecks($params){
         
         $isNumber = true;
@@ -52,6 +61,26 @@ class Furniture {
         }
         return $isNumber;
     }
+    
+    public function divideNumber($number){
+        
+    }
+    
+    /**
+        Tests for presence of errors and whether the query has returned false
+    
+    */
+    private function checkQuerySuccess($stmt){
+        
+        $errorInfo = $stmt->errorInfo();
+        if(isset($errorInfo[2]) || !$stmt){
+            self::getFurnitureFailed($stmt, $db);
+            return $false;
+        }
+        return true;
+    }
+    
+    
     
     function getFurniture() {
         $message = "";
@@ -74,36 +103,32 @@ class Furniture {
                 
                 $query = $db->query(Furniture::$max_query);
                 
-                $errorInfo = $query->errorInfo();
-                if(isset($errorInfo[2])){ // check for errors
-                    self::getFurnitureFailed($query, $db);
-                    return "<h2 class='error'>There was a problem with the website, we will try to fix this as soon as possible</p>";
-                    
-                }
-                if ($query){// if query succedded
+                $success = self::checkQuerySuccess($query);
+                
+                if ($success){// if query succedded
                     $result = $query->fetchAll(PDO::FETCH_ASSOC);
                     $number_of_furniture = $result[0];
                     
                     $total = $number + $x;
+                    
                     $query->closeCursor();
+                    
                     if ($params["x"]>$number_of_furniture || ($total)>$number_of_furniture ){
                         $message = "<p class='error'>There was a problem with your input, please check the numbers</p>";
                         return $message;
                     } else {
                         $stmt = $db->prepare(Furniture::$get_furniture);
-                        
                         $stmt->bindParam(1, $total, PDO::PARAM_INT);
                         $stmt->execute();
-                        $errorInfo = $stmt->errorInfo();
-                        if(isset($errorInfo[2])){
-                            self::getFurnitureFailed($stmt, $db);
-                            return "<p class='error'>There was a problem with the database, we will try to fix this as soon as possible</p>";
-                        }
-                        if ($stmt){ 
+                        
+                        $success = self::checkQuerySuccess($stmt);
+                        
+                        if ($success){ //if found items, loop through all of them and create the html elements
                             foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row){
                                 $message = $message . "\n" . self::getFurnitureByName($row); 
                                 //$message = $message . var_dump($row);
                             }
+                            $stmt->closeCursor();
                         }else {
                           //failed to get any results from database, something very strange happened
                             self::getFurnitureFailed($stmt, $db);
@@ -128,6 +153,9 @@ class Furniture {
         return $message;
     }
     
+    /**
+        Makes a figure html element out of the database information
+    */
     function getFurnitureByName($row) {
         $filename = $row["filename"];
         $folder = $row["folder"];
@@ -135,9 +163,9 @@ class Furniture {
         $description = $row["description"];
         $price = $row["price"];
         $id = $row["id"];
-        $image = "<li class='border'><figure class='center'>
+        $image = "<li ><figure class='center'>
         <img src='". $folder . "/" . $filename ."' alt='picture' class='center'>
-        <figcaption><p><span id='title'>" . $title ."</span> <span id='price'>" . $price  . "<span></p><p><span id='description'>" . $description ." </span></p>" .
+        <figcaption><p><span class='title'>" . $title ."</span> <span class='price'>" . $price  . "<span></p><p><span class='description'>" . $description ." </span></p>" .
         "</figcaption>
         
         </figure></li>";

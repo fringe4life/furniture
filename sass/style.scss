@@ -4,9 +4,9 @@
 $background : #F5F5F5;
 $tab-background :#E7E7E7;
 $font-family-body : cursive, sans-serif;
-$font-family-header: 'Oswald', sans-serif;
+$font-family-header: "Liberation Mono", sans-serif;
 
-@mixin border($border-color, $border-radius:2px, $width: thin, $type: solid){
+@mixin border($border-color:grey, $border-radius:2px, $width: thin, $type: solid){
 	border: $width $type $border-color;
     border-radius: $border-radius;
 }
@@ -14,6 +14,38 @@ $font-family-header: 'Oswald', sans-serif;
 %reset {
 	padding: 0;
 	margin:0;
+}
+
+%form {
+@extend %reset;
+padding: 15px;
+	width: 100%;
+	@extend .center;
+	
+}
+
+%label {
+	//@extebd .center;
+	display: inline-block;
+	text-align: right;
+	width:90px;
+}
+
+%submit {
+	//width:80%;
+	cursor: pointer;
+	
+	background-color:orange;
+	color: blue;
+	@include border(grey, 25px);
+}
+
+%input {
+	height: 40px;
+	width: 255px;
+	@extend .center;
+	padding: 2px 2px 2px 5px;
+	
 }
 
 %flex-box {
@@ -54,7 +86,7 @@ $font-family-header: 'Oswald', sans-serif;
 
 .break {
    clear: both;
-   @extend .padding-bottom-10
+   //@extend .padding-bottom-10
 }
 
 body {
@@ -87,23 +119,30 @@ body {
 }
 
 p + p {
-    @extend .padding-top-10;
+    padding-top: 10px;
+	//padding-bottom: 10px;
 }
 
-p:first-child {
-     padding-bottom: 10px;
-}
-p + p {
-     padding-bottom: 10px;
+//p:first-child {
+//     padding-bottom: 10px;
+//}
+
+#tabs {
+        
+     padding-top: 10px;
+     padding-bottom: 20px;
+     width:100%;
+     
 }
 
 // having set up variables, mixins and classes, import the partial files
+@import "nav";
 @import "header";
-@import "tabs";
+@import "tab-1";
 @import "footer";
-@import "contact";
-@import "about";
-@import "figure";
+@import "tab-2";
+@import "tab-4";
+@import "tab-3";
 
 // main container
 .container {
