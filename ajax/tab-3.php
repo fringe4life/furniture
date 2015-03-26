@@ -11,8 +11,8 @@
             <label for="query">Search: </label>
             <input  type="text" name="query" id="query" placeholder="What are you looking for?"><br style="border:0;" />
             
-            <input type="range" min=500, max=1400, value=700, id="min"><input id="minLabel" >:700</input>
-            <input type="range" min=500, max=1400, value=900, id="max"><input id="maxLabel" >:900</input>
+            <input type="range" min=500, max=1400, value=700, id="min"><p id="minLabel">:700</p>
+            <input type="range" min=500, max=1400, value=900, id="max"><p id="maxLabel">:900</p>
             <div class="center">
                 <input type="submit" value="search" >
             </div>
