@@ -100,6 +100,10 @@
       #remainingText {
           padding-left: 15px;
           padding-right: 45px;
+		  @media (max-width:550px){
+			padding-right: 5px;
+			padding-left:9px;
+		  }
       }
      #welcome {
           font-family: $font-family-header;

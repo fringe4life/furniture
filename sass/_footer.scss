@@ -3,10 +3,8 @@ footer {
    
     display: flex;
      @extend %flex-box;
-      @media (max-width:850px){
         flex-direction: column;
      flex-wrap: wrap;
-      }
    
    
    padding-top: 14px;
@@ -47,6 +45,29 @@ footer {
       padding: 2px;
       
    }
+   .nav {
+		ul {
+            
+        @extend %flex-box;
+		  flex-direction: column;
+		  flex-wrap: wrap;
+     @media (max-width:420px){
+	 display:flex;
+        width:100%;
+        padding: 0;
+        
+     }
+         }
+		 a {
+		  @media (max-width:420px) and  (min-width:200px){
+            display: block;
+            float:none;
+            width:200px;
+           margin-bottom: 10px;
+            
+         }
+	}
+	}
 }
 
 %mailto {

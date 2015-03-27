@@ -49,3 +49,5 @@ sass/.sass-cache
 #ignore cfg
 *.cfg
 *.cfg
+prepros.cfg
+*.cfg

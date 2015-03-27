@@ -1,4 +1,4 @@
-#nav {
+.nav {
         float: right;
         @extend %removeFloat;
         order:2;
@@ -8,14 +8,19 @@
         @extend %flex-box;
 		  flex-direction: column;
 		  flex-wrap: wrap;
-     @media (max-width:350px){
+     @media (max-width:420px){
         width:100%;
         padding: 0;
         
      }
          }
 		 li {
-    
+    @media (max-width:420px) and  (min-width:200px){
+	width:100%;
+            float:none;
+           // padding-bottom: 0;
+            
+         }
     &:first-child {
         padding-left: 12px;
     }
@@ -34,11 +39,9 @@
      li + li {
          padding-left: 12px;
          @media (max-width:400px){
-          padding-left: 6px;
+          padding-top: 8px;
          }
-         @media (max-width:350px){
-          padding-left: 12px;
-         }
+         
          
      }
      a {
@@ -49,7 +52,7 @@
       background-color: orange;
       padding: 5px;
       //border-radius: 2px;
-       @media (max-width:350px) and  (min-width:200px){
+       @media (max-width:420px) and  (min-width:200px){
             display: block;
             float:none;
             width:200px;

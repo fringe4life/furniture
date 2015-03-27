@@ -88,7 +88,7 @@ input {
 }
 
 /* line 51, ../sass/style.scss */
-#nav ul, #flex, footer, #workFlex {
+.nav ul, #flex, footer, footer .nav ul, #workFlex {
   justify-content: space-between;
   align-items: center;
   align-content: center;
@@ -167,7 +167,7 @@ body {
 }
 
 /* line 117, ../sass/style.scss */
-.padding-bottom-10, #nav li {
+.padding-bottom-10, .nav li {
   padding-bottom: 10px;
 }
 
@@ -184,60 +184,61 @@ p + p {
 }
 
 /* line 1, ../sass/_nav.scss */
-#nav {
+.nav {
   float: right;
   order: 2;
   align-self: center;
 }
 /* line 6, ../sass/_nav.scss */
-#nav ul {
+.nav ul {
   flex-direction: column;
   flex-wrap: wrap;
 }
-@media (max-width: 350px) {
+@media (max-width: 420px) {
   /* line 6, ../sass/_nav.scss */
-  #nav ul {
+  .nav ul {
     width: 100%;
     padding: 0;
   }
 }
 /* line 17, ../sass/_nav.scss */
-#nav li {
+.nav li {
   padding-top: 10px;
   float: left;
   text-align: center;
 }
-/* line 19, ../sass/_nav.scss */
-#nav li:first-child {
+@media (max-width: 420px) and (min-width: 200px) {
+  /* line 17, ../sass/_nav.scss */
+  .nav li {
+    width: 100%;
+    float: none;
+  }
+}
+/* line 24, ../sass/_nav.scss */
+.nav li:first-child {
   padding-left: 12px;
 }
 @media (max-width: 350px) {
   /* line 17, ../sass/_nav.scss */
-  #nav li {
+  .nav li {
     display: block;
     float: none;
     width: 100%;
     padding-bottom: 0;
   }
 }
-/* line 34, ../sass/_nav.scss */
-#nav li + li {
+/* line 39, ../sass/_nav.scss */
+.nav li + li {
   padding-left: 12px;
 }
 @media (max-width: 400px) {
-  /* line 34, ../sass/_nav.scss */
-  #nav li + li {
-    padding-left: 6px;
+  /* line 39, ../sass/_nav.scss */
+  .nav li + li {
+    padding-top: 8px;
   }
 }
-@media (max-width: 350px) {
-  /* line 34, ../sass/_nav.scss */
-  #nav li + li {
-    padding-left: 12px;
-  }
-}
-/* line 44, ../sass/_nav.scss */
-#nav a {
+/* line 47, ../sass/_nav.scss */
+.nav a {
   padding-bottom: 5px;
   padding-top: 5px;
   text-decoration: none;
@@ -246,16 +247,16 @@ p + p {
   background-color: orange;
   padding: 5px;
 }
-@media (max-width: 350px) and (min-width: 200px) {
-  /* line 44, ../sass/_nav.scss */
-  #nav a {
+@media (max-width: 420px) and (min-width: 200px) {
+  /* line 47, ../sass/_nav.scss */
+  .nav a {
     display: block;
     float: none;
     width: 200px;
   }
 }
-/* line 60, ../sass/_nav.scss */
-#nav a:hover, #nav a:active {
+/* line 63, ../sass/_nav.scss */
+.nav a:hover, .nav a:active {
   color: red;
 }
 
@@ -282,7 +283,7 @@ header h1 {
     font-size: 26px;
   }
 }
-@media (max-width: 330px) {
+@media (max-width: 415px) {
   /* line 3, ../sass/_header.scss */
   header h1 {
     font-size: 22px;
@@ -293,7 +294,7 @@ header h1 {
     width: 90%;
   }
 }
-@media (max-width: 330px) {
+@media (max-width: 415px) {
   /* line 21, ../sass/_header.scss */
   header h1:before {
     content: "C.W.";
@@ -310,7 +311,7 @@ header #header {
 
 @media (max-width: 850px) {
   /* line 44, ../sass/_header.scss */
-  #nav, header #header {
+  .nav, header #header {
     float: none;
   }
 }
@@ -320,7 +321,7 @@ header #header {
   height: 100%;
   display: flex;
 }
-@media (max-width: 850px) {
+@media (max-width: 950px) {
   /* line 50, ../sass/_header.scss */
   #flex {
     flex-direction: column;
@@ -435,13 +436,20 @@ header #header {
   padding-left: 15px;
   padding-right: 45px;
 }
-/* line 104, ../sass/_tab-1.scss */
+@media (max-width: 550px) {
+  /* line 100, ../sass/_tab-1.scss */
+  #tabs-1 #remainingText {
+    padding-right: 5px;
+    padding-left: 9px;
+  }
+}
+/* line 108, ../sass/_tab-1.scss */
 #tabs-1 #welcome {
   font-family: "Liberation Mono", sans-serif;
   font-size: 22px;
   text-decoration: underline;
 }
-/* line 113, ../sass/_tab-1.scss */
+/* line 117, ../sass/_tab-1.scss */
 #tabs-1 div + p {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -450,17 +458,12 @@ header #header {
 /* line 1, ../sass/_footer.scss */
 footer {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding-top: 14px;
   padding: 12px;
   margin-top: 7px;
   text-align: center;
-}
-@media (max-width: 850px) {
-  /* line 1, ../sass/_footer.scss */
-  footer {
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
 }
 @media (max-width: 320px) {
   /* line 1, ../sass/_footer.scss */
@@ -468,58 +471,80 @@ footer {
     padding: 0;
   }
 }
-/* line 19, ../sass/_footer.scss */
+/* line 17, ../sass/_footer.scss */
 footer a[href^="mailto"] {
   padding: 2px 3px 2px 2px;
   border: thin solid lightgrey;
   border-radius: 2px;
 }
-/* line 25, ../sass/_footer.scss */
+/* line 23, ../sass/_footer.scss */
 footer a[href^="mailto"]:hover, footer a[href^="mailto"]:hover:after {
   color: green;
 }
-/* line 34, ../sass/_footer.scss */
+/* line 32, ../sass/_footer.scss */
 footer span {
   background-color: grey;
   color: white;
   padding-bottom: 3px !important;
   text-align: center;
 }
-/* line 43, ../sass/_footer.scss */
+/* line 41, ../sass/_footer.scss */
 footer #emailSymbol {
   border: thin solid grey;
   border-radius: 2px;
   padding: 2px;
 }
+/* line 49, ../sass/_footer.scss */
+footer .nav ul {
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media (max-width: 420px) {
+  /* line 49, ../sass/_footer.scss */
+  footer .nav ul {
+    display: flex;
+    width: 100%;
+    padding: 0;
+  }
+}
+@media (max-width: 420px) and (min-width: 200px) {
+  /* line 61, ../sass/_footer.scss */
+  footer .nav a {
+    display: block;
+    float: none;
+    width: 200px;
+    margin-bottom: 10px;
+  }
+}
 
-/* line 52, ../sass/_footer.scss */
+/* line 73, ../sass/_footer.scss */
 footer a[href^="mailto"], #contactEmail #repEmail a[href^="mailto"] {
   text-decoration: none;
   font-weight: 500;
   background-color: #D3D3D3;
 }
 
-/* line 59, ../sass/_footer.scss */
+/* line 80, ../sass/_footer.scss */
 #copyEmail {
   order: 3;
 }
 
 @media (max-width: 330px) {
-  /* line 65, ../sass/_footer.scss */
+  /* line 86, ../sass/_footer.scss */
   #contactEmail #origEmail {
     display: none;
   }
 }
-/* line 70, ../sass/_footer.scss */
+/* line 91, ../sass/_footer.scss */
 #contactEmail #repEmail {
   display: none;
 }
-/* line 75, ../sass/_footer.scss */
+/* line 96, ../sass/_footer.scss */
 #contactEmail #repEmail a[href^="mailto"]:hover, #contactEmail #repEmail a[href^="mailto"]:hover:after {
   color: green;
 }
 @media (max-width: 330px) {
-  /* line 70, ../sass/_footer.scss */
+  /* line 91, ../sass/_footer.scss */
   #contactEmail #repEmail {
     display: block;
   }
@@ -564,39 +589,36 @@ footer a[href^="mailto"], #contactEmail #repEmail a[href^="mailto"] {
 /* line 37, ../sass/_tab-2.scss */
 .contact-info .info {
   padding-bottom: 0;
-  font-stretch: condensed;
-}
-@media (max-width: 600px) {
-  /* line 37, ../sass/_tab-2.scss */
-  .contact-info .info {
-    padding-left: 40px;
-  }
-}
-@media (max-width: 500px) {
-  /* line 37, ../sass/_tab-2.scss */
-  .contact-info .info {
-    padding-left: 35px;
-  }
-}
-@media (max-width: 400px) {
-  /* line 37, ../sass/_tab-2.scss */
-  .contact-info .info {
-    padding-left: 10px;
-  }
-}
-@media (max-width: 300px) {
-  /* line 37, ../sass/_tab-2.scss */
-  .contact-info .info {
-    padding-left: 0;
-  }
+  	  /*
+        @media (max-width: 600px){
+           padding-left: 40px;
+        }
+        @media (max-width: 500px){
+           padding-left: 35px;
+        }
+        @media (max-width: 400px){
+           padding-left: 10px;
+        }
+        @media (max-width: 300px){
+           padding-left: 0;
+           
+        }
+        font-stretch: condensed;
+        
+         @media (max-width:400px){
+            //text-align: left;
+            //font-size: 15px;
+           // width: 80%;
+       }
+  	 */
 }
 
-/* line 64, ../sass/_tab-2.scss */
+/* line 66, ../sass/_tab-2.scss */
 .contact-info:last-child {
   margin-bottom: 7px;
 }
 
-/* line 69, ../sass/_tab-2.scss */
+/* line 71, ../sass/_tab-2.scss */
 #tabs-2 {
   width: 350px;
   padding-top: 7px;
@@ -605,7 +627,7 @@ footer a[href^="mailto"], #contactEmail #repEmail a[href^="mailto"] {
   text-align: center;
 }
 @media (max-width: 400px) {
-  /* line 69, ../sass/_tab-2.scss */
+  /* line 71, ../sass/_tab-2.scss */
   #tabs-2 {
     font-size: 15px;
     width: 90%;

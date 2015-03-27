@@ -11,7 +11,7 @@ header {
       @media (max-width: 900px){
             font-size: 26px;
           }
-      @media (max-width: 330px){
+      @media (max-width: 415px){
          #name {
             display: none;
             width: 90%;
@@ -19,7 +19,7 @@ header {
           font-size: 22px;
       }
       &:before {
-          @media (max-width: 330px){
+          @media (max-width:415px){
             content: "C.W.";
             font-size: 22px;
           }
@@ -51,7 +51,7 @@ header {
         height:100%;
         display: flex;
      @extend %flex-box;
-      @media (max-width:850px){
+      @media (max-width:950px){
         flex-direction: column;
      flex-wrap: wrap;
       }
