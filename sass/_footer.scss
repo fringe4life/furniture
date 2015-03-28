@@ -1,10 +1,14 @@
 footer {
    @extend %reset;
-   
-    display: flex;
-     @extend %flex-box;
-        flex-direction: column;
-     flex-wrap: wrap;
+ //  margin-top:15px;
+   //height:80px;
+	//position:absolute;
+    //display: flex;
+     //@extend %flex-box;
+     // @media (max-width:850px){
+       // flex-direction: column;
+     //flex-wrap: wrap;
+      //}
    
    
    padding-top: 14px;

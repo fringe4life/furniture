@@ -42,7 +42,7 @@ padding: 15px;
 
 %input {
 	height: 40px;
-	width: 255px;
+	width: 90%;
 	@extend .center;
 	padding: 2px 2px 2px 5px;
 	
@@ -50,7 +50,7 @@ padding: 15px;
 
 %flex-box {
 	justify-content: space-between;
-    align-items: center;
+    //align-items: center;
     align-content: center;
 }
 
@@ -91,6 +91,7 @@ padding: 15px;
 
 body {
    background-color: $background;
+   //max-width: 1600px;
 }
 
 #tabs, footer {

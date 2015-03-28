@@ -8,6 +8,7 @@
         @extend %flex-box;
 		  flex-direction: column;
 		  flex-wrap: wrap;
+		  align-items: center;
      @media (max-width:420px){
         width:100%;
         padding: 0;

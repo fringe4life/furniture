@@ -10,7 +10,7 @@ class Furniture {
     private static $x_default = 0;
     private static $number_default = 10;
     private static $max_query = "Select Max(id) AS id From furniture";
-    private static $get_furniture = "Select * FROM furniture WHERE id =< ? AND id >= ?";
+    private static $get_furniture = "Select * FROM furniture WHERE id <= ? AND id >= ?";
     
     function addFurniture() {
         
@@ -152,7 +152,7 @@ class Furniture {
             $get = $get + 1;
             $stmt->bindParam(2, $get, PDO::PARAM_INT);
         }
-        echo $half . " " . $get;
+        //echo $half . " " . $get;
     }
     
     function getFurniture($gallery) {
@@ -168,7 +168,7 @@ class Furniture {
             $params["max"] = 1400;
             $isNumber = self::performChecks($params);
             
-            $message = $message . "\rgot here";
+            //$message = $message . "\rgot here";
             if ($isNumber){// if not null, not empty and all are numbers...
                 //get the values into variables, more readable
                 $x = $params["x"];
@@ -176,7 +176,7 @@ class Furniture {
                 
                 // create the class that access the database
                 try {
-                    $message = $message . "\rgot here";
+                    //$message = $message . "\rgot here";
                     $db = new FurnitureDB();
                     //get a connection
                     $db = $db::getConnection();
@@ -184,7 +184,7 @@ class Furniture {
                     $query = $db->query(Furniture::$max_query);
                     
                     $success = self::checkQuerySuccess($query, $db);
-                    $message = $message . "\rgot here";
+                    //$message = $message . "\rgot here";
                     if ($success){// if query succedded
                         $result = $query->fetchAll(PDO::FETCH_ASSOC);
                         $number_of_furniture = $result[0];
@@ -198,7 +198,7 @@ class Furniture {
                             $stmt = $db->prepare(Furniture::$get_furniture);
                             
                             self::bindValues($x, $number, $gallery, $stmt, $number_of_furniture);
-                            $message = $message . " " . $x . " " . $number . " " . $number_of_furniture;
+                            //$message = $message . " " . $x . " number: " . $number . " " . $number_of_furniture;
                             //$message = $message . "\rgot here";
                             $stmt->execute();
                             
